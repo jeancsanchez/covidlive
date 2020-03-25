@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
           appBar: AppBar(
             title: Text('Covid Live'),
+            backgroundColor: Colors.redAccent,
           ),
           body: ItemsList()),
     );

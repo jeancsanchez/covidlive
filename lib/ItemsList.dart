@@ -2,6 +2,7 @@ import 'package:covidlive/http/api_client.dart';
 import 'package:covidlive/http/models/country.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class ItemsList extends StatelessWidget {
   final List<Country> countries = List();
@@ -49,10 +50,23 @@ class _ItemList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    debugPrint('-------->' + country.flag);
     return Card(
       child: ListTile(
-        title: Text(country.countryEnglishName),
-        subtitle: Text(country.deadCount.toString()),
+        leading: SvgPicture.network(
+          country.flag,
+          placeholderBuilder: (context) => Icon(Icons.flag),
+          height: 30,
+        ),
+        title: Text(country.name),
+        subtitle: Text(
+          'Total: ${country.cases} casos\n'
+          'Recuperados: ${country.recovered}\n'
+          'Hoje: +${country.deltaCases} casos'),
+        trailing: Text(
+          'Mortes: ${country.deaths}',
+          style: TextStyle(color: Colors.redAccent),
+        ),
       ),
     );
   }

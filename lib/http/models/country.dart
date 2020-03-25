@@ -1,39 +1,38 @@
 class Country {
-  final int locationId;
-  final String continentEnglishName;
-  final String countryEnglishName;
-  final String provinceEnglishName;
-  final int currentConfirmedCount;
-  final int confirmedCount;
-  final int suspectedCount;
-  final int curedCount;
-  final int deadCount;
-  final int updateTime;
+  final int reports;
+  final int recovered;
+  final String flag;
+  final int cases;
+  final int lng;
+  final String name;
+  final int deaths;
+  final int lat;
+  final int deltaCases;
+  final int deltaDeaths;
 
   Country(
-      {this.locationId,
-      this.continentEnglishName,
-      this.countryEnglishName,
-      this.provinceEnglishName,
-      this.currentConfirmedCount,
-      this.confirmedCount,
-      this.suspectedCount,
-      this.curedCount,
-      this.deadCount,
-      this.updateTime});
+      {this.reports,
+      this.recovered,
+      this.flag,
+      this.cases,
+      this.lng,
+      this.name,
+      this.deaths,
+      this.lat,
+      this.deltaCases,
+      this.deltaDeaths});
 
   factory Country.fromJson(Map<dynamic, dynamic> json) {
     return Country(
-      locationId: json['locationId'],
-      continentEnglishName: json['continentEnglishName'],
-      countryEnglishName: json['countryEnglishName'],
-      provinceEnglishName: json['provinceEnglishName'],
-      currentConfirmedCount: json['currentConfirmedCount'],
-      confirmedCount: json['confirmedCount'],
-      suspectedCount: json['suspectedCount'],
-      curedCount: json['curedCount'],
-      deadCount: json['deadCount'],
-      updateTime: json['updateTime'],
-    );
+        reports: json['reports'],
+        recovered: json['recovered'],
+        flag: json['flag'],
+        cases: json['cases'],
+        lng: json['lng'],
+        name: json['name'],
+        deaths: json['deaths'],
+        lat: json['lat'],
+        deltaCases: json['deltaCases'],
+        deltaDeaths: json['deltaDeaths']);
   }
 }

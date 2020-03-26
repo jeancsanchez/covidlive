@@ -1,4 +1,4 @@
-package com.covidlive;
+package com.covid19live;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

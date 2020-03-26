@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:covidlive/models/Country.dart';
+import 'package:covid19live/models/Country.dart';
 import 'package:http/http.dart';
 
 Future<List<Country>> getAll() async {

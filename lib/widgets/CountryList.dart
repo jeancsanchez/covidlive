@@ -1,5 +1,5 @@
-import 'package:covidlive/data/Repository.dart';
-import 'package:covidlive/models/Country.dart';
+import 'package:covid19live/data/Repository.dart';
+import 'package:covid19live/models/Country.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

@@ -1,5 +1,5 @@
-import 'package:covidlive/data/database/Database.dart';
-import 'package:covidlive/data/http/ApiClient.dart';
+import 'package:covid19live/data/database/Database.dart';
+import 'package:covid19live/data/http/ApiClient.dart';
 
 import '../models/Country.dart';
 

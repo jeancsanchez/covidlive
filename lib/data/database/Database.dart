@@ -1,5 +1,5 @@
-import 'package:covidlive/data/database/DBContract.dart';
-import 'package:covidlive/models/Country.dart';
+import 'package:covid19live/data/database/DBContract.dart';
+import 'package:covid19live/models/Country.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 

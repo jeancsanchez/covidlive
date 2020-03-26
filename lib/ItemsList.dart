@@ -1,17 +1,18 @@
-import 'package:covidlive/http/api_client.dart';
-import 'package:covidlive/http/models/country.dart';
+import 'package:covidlive/data/Repository.dart';
+import 'package:covidlive/models/Country.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ItemsList extends StatelessWidget {
   final List<Country> countries = List();
+  final repository = Repository();
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<Country>>(
         initialData: countries,
-        future: findAllCountries(),
+        future: repository.findAll(),
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
             case ConnectionState.none:
@@ -50,7 +51,6 @@ class _ItemList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('-------->' + country.flag);
     return Card(
       child: ListTile(
         leading: SvgPicture.network(
@@ -59,10 +59,9 @@ class _ItemList extends StatelessWidget {
           height: 30,
         ),
         title: Text(country.name),
-        subtitle: Text(
-          'Total: ${country.cases} casos\n'
-          'Recuperados: ${country.recovered}\n'
-          'Hoje: +${country.deltaCases} casos'),
+        subtitle: Text('Total: ${country.cases} casos\n'
+            'Recuperados: ${country.recovered}\n'
+            'Hoje: +${country.deltaCases} casos'),
         trailing: Text(
           'Mortes: ${country.deaths}',
           style: TextStyle(color: Colors.redAccent),

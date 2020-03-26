@@ -1,4 +1,4 @@
-import 'package:covidlive/http/models/country.dart';
+import 'package:covidlive/models/Country.dart';
 
 class Result {
   final String timestamp;

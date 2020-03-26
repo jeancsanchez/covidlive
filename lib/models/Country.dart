@@ -35,4 +35,19 @@ class Country {
         deltaCases: json['deltaCases'],
         deltaDeaths: json['deltaDeaths']);
   }
+
+  static Map<String, dynamic> toJson(Country country) {
+    final json = Map<String, dynamic>();
+    json['reports'] = country.reports;
+    json['recovered'] = country.recovered;
+    json['flag'] = country.flag;
+    json['cases'] = country.cases;
+    json['lng'] = country.lng;
+    json['name'] = country.name;
+    json['deaths'] = country.deaths;
+    json['lat'] = country.lat;
+    json['deltaCases'] = country.deltaCases;
+    json['deltaDeaths'] = country.deltaDeaths;
+    return json;
+  }
 }

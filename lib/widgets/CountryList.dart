@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class ItemsList extends StatelessWidget {
+class CountryList extends StatelessWidget {
   final List<Country> countries = List();
   final repository = Repository();
 

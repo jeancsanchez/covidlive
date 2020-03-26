@@ -1,9 +1,8 @@
-import 'package:covidlive/ItemsList.dart';
+import 'package:covidlive/widgets/CountryList.dart';
+import 'package:covidlive/widgets/InfoIcon.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -14,31 +13,9 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: Text('Covid Live'),
             backgroundColor: Colors.redAccent,
-            actions: <Widget>[
-              IconButton(
-                  icon: Icon(Icons.info_outline),
-                  onPressed: () {
-                    showDialog(
-                        context: context,
-                        builder: (BuildContext ctx) {
-                          return AlertDialog(
-                            content: Text(
-                                'Icon made by Freepik from www.flaticon.com\n'
-                                'Data updates from covidvisualizer.com'),
-                            actions: <Widget>[
-                              FlatButton(
-                                child: Text('Ok'),
-                                onPressed: () {
-                                  Navigator.of(ctx).pop();
-                                },
-                              ),
-                            ],
-                          );
-                        });
-                  })
-            ],
+            actions: <Widget>[InfoIcon()],
           ),
-          body: ItemsList()),
+          body: CountryList()),
     );
   }
 }
